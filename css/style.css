@@ -1,0 +1,30 @@
+/* Styles de base déjà présents dans le HTML via <style> */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    /* Assure-toi qu'aucune règle ici ne bloque le scroll comme overflow: hidden; */
+  }
+  
+  section {
+    /* Ajuste cette valeur si la hauteur de ta navbar change (hauteur + marge) */
+    /* La valeur doit être au moins la hauteur de ton header fixé */
+    scroll-margin-top: 80px;
+  }
+  
+  /* Correction Cruciale : Empêche le canvas des particules d'intercepter les clics/scroll */
+  #tsparticles {
+    pointer-events: none;
+  }
+  
+  /* Optionnel: Style pour les liens actifs dans la navbar (nécessite JS) */
+  /*
+  nav a.active {
+    color: white;
+    font-weight: 600;
+  }
+  */
+  
+  /* Tu peux ajouter d'autres styles personnalisés ici si nécessaire */

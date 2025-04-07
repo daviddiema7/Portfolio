@@ -1,0 +1,14 @@
+# Fichiers système macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Fichiers système Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Fichiers IDE/éditeur (optionnel, adapte selon tes outils)
+.vscode/
+.idea/

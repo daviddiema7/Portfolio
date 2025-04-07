@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de David Diema, étudiant en BUT Informatique. Découvrez mes projets, compétences et expériences."> <!-- Mise à jour Meta Description -->
+  <title>David Diema - Portfolio Étudiant BUT Informatique</title> <!-- Titre plus spécifique -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Optionnel: Ajoute un Favicon -->
+  <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+  <!-- <link rel="icon" href="/images/favicon.svg" type="image/svg+xml"> -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    section {
+      scroll-margin-top: 80px; /* Ajuste si nécessaire */
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-900 text-white relative">
+
+  <!-- Fond animé -->
+  <div id="tsparticles" class="absolute inset-0 -z-10"></div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 w-full z-50 bg-gray-900/70 backdrop-blur-md shadow">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-end flex-wrap gap-4 text-base text-blue-300 font-medium">
+      <a href="#skills" class="hover:underline hover:underline-offset-4 hover:text-white transition">Skills</a>
+      <a href="#academique" class="hover:underline hover:underline-offset-4 hover:text-white transition">Compétences académiques</a>
+      <a href="#projets" class="hover:underline hover:underline-offset-4 hover:text-white transition">Projets</a>
+      <a href="#experience" class="hover:underline hover:underline-offset-4 hover:text-white transition">Expérience</a>
+      <a href="#veille" class="hover:underline hover:underline-offset-4 hover:text-white transition">Veille</a>
+    </nav>
+    
+  </header>
+
+  <!-- ====================================================== -->
+  <!-- ============ SECTION ACCUEIL MODIFIÉE ICI ============ -->
+  <!-- ====================================================== -->
+  <section id="accueil" class="pt-36 pb-16 px-4 text-center min-h-screen flex flex-col justify-center">
+    <div>
+      <!-- Ajoute ta photo ici si tu veux -->
+      <!-- <img src="images/moi.jpg" alt="Photo de David Diema" class="w-32 h-32 rounded-full mx-auto mb-6"> -->
+
+      <!-- Ton Nom en gros titre -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-2">David Diema</h1>
+
+      <!-- Le message de bienvenue, plus petit -->
+      <p class="mt-1 text-xl text-gray-300">Bienvenue sur mon Portfolio</p>
+
+      <!-- Ton statut/rôle -->
+      <p class="mt-4 text-lg text-blue-300">Étudiant en BUT Informatique - 2ème année</p>
+
+       <!-- Bouton pour scroller vers la section suivante -->
+       <div class="mt-8">
+         <a href="#a-propos" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+           Découvrir mon profil 👇
+         </a>
+       </div>
+    </div>
+  </section>
+  <!-- ====================================================== -->
+  <!-- ============ FIN SECTION ACCUEIL MODIFIÉE ============ -->
+  <!-- ====================================================== -->
+
+
+  <!-- À propos -->
+  <section id="a-propos" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 text-center">À propos de moi</h2>
+    <p class="text-gray-300 text-center leading-relaxed">
+      Je suis un étudiant passionné par le développement web, les nouvelles technologies et l’informatique en général. Curieux, rigoureux et créatif, je suis toujours à la recherche de nouveaux défis pour améliorer mes compétences. J'aime comprendre comment les choses fonctionnent et construire des solutions efficaces et élégantes.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 bg-gray-800 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-8 text-center">Compétences Personnelles</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-blue-300">💻 Hard Skills</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <!-- Personnalise tes skills -->
+            <li>HTML, CSS (Tailwind CSS), JavaScript (ES6+)</li>
+            <li>Python, Java</li>
+            <li>SQL (PostgreSQL/MySQL)</li>
+            <li>Git, GitHub</li>
+            <li>Frameworks JS (ex: React, Vue) - si applicable</li>
+            <li>Node.js - si applicable</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-blue-300">🤝 Soft Skills</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>Travail en équipe</li>
+            <li>Autonomie et Proactivité</li>
+            <li>Résolution de problèmes</li>
+            <li>Communication</li>
+            <li>Adaptabilité</li>
+            <li>Curiosité</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences académiques -->
+  <section id="academique" class="py-16 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Compétences Académiques (BUT Info)</h2>
+    <ul class="list-disc list-inside text-gray-300 space-y-2 md:columns-2">
+       <li>Algorithmique et structures de données</li>
+       <li>Développement Web (Frontend & Backend)</li>
+       <li>Administration systèmes (Linux)</li>
+       <li>Administration réseaux (TCP/IP)</li>
+       <li>Bases de données (Conception, SQL)</li>
+       <li>Mathématiques appliquées</li>
+       <li>Gestion de projet (Agile)</li>
+       <li>Sécurité informatique (Principes)</li>
+       <li>Architecture logicielle (UML)</li>
+       <!-- Adapte à ton parcours exact -->
+    </ul>
+  </section>
+
+   <!-- Expérience -->
+   <section id="experience" class="py-16 bg-gray-800 px-4">
+     <div class="max-w-4xl mx-auto">
+       <h2 class="text-3xl font-semibold mb-8 text-center">Expériences Professionnelles / Stages</h2>
+       <div class="space-y-6 text-gray-300 border-l-2 border-blue-400 pl-6">
+         <!-- Remplis avec tes vraies expériences -->
+         <div class="relative">
+           <div class="absolute -left-8 top-1 w-4 h-4 bg-blue-400 rounded-full"></div>
+           <h3 class="text-xl font-semibold text-white">Stage - Développeur Web [À Remplir]</h3>
+           <p class="text-sm text-blue-300 font-medium">Nom Entreprise | Ville - Dates (ex: Avril 2024 - Juin 2024)</p>
+           <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
+             <li>Mission 1 : Description...</li>
+             <li>Mission 2 : Description...</li>
+             <li>Technologies utilisées : React, Node.js, etc.</li>
+           </ul>
+         </div>
+         <!-- Si pas de stage, mets un projet majeur -->
+         <!-- <div class="relative">
+            <div class="absolute -left-8 top-1 w-4 h-4 bg-gray-500 rounded-full"></div>
+            <h3 class="text-xl font-semibold text-white">Projet Académique Significatif - [Nom Projet]</h3>
+             <p class="text-sm text-blue-300 font-medium">BUT Informatique - Semestre X - Année</p>
+             <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
+               <li>Objectif : ...</li>
+               <li>Réalisation : ...</li>
+               <li>Technologies : ...</li>
+             </ul>
+         </div> -->
+       </div>
+        <!-- Message si aucune expérience listée -->
+        <!-- <p class="text-center text-gray-400 mt-6 italic">Mes premières expériences professionnelles sont à venir.</p> -->
+     </div>
+   </section>
+
+   <!-- Projets -->
+   <section id="projets" class="py-16 px-4">
+     <div class="max-w-6xl mx-auto">
+       <h2 class="text-3xl font-semibold mb-8 text-center">Mes Projets</h2>
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
+         <!-- Projet 1 - Remplis les détails -->
+         <div class="bg-gray-700 p-5 rounded-xl shadow-lg flex flex-col hover:shadow-blue-500/30 transition duration-300">
+           <img src="images/placeholder-projet.png" alt="Aperçu Projet 1" class="w-full h-40 object-cover rounded-md mb-4">
+           <h3 class="font-semibold text-lg text-white mb-2">Nom du Projet 1</h3>
+           <p class="text-sm text-gray-400 mb-3 flex-grow">Description du projet, technologies (HTML/CSS/JS, etc.).</p>
+           <div class="mt-auto space-x-3">
+             <a href="[LIEN_GITHUB_PROJET_1]" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Code (GitHub)</a>
+             <a href="[LIEN_DEMO_PROJET_1]" target="_blank" class="inline-block bg-gray-600 hover:bg-gray-500 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Démo Live</a>
+           </div>
+         </div>
+         <!-- Projet 2 - Remplis les détails -->
+         <div class="bg-gray-700 p-5 rounded-xl shadow-lg flex flex-col hover:shadow-blue-500/30 transition duration-300">
+           <img src="images/placeholder-projet.png" alt="Aperçu Projet 2" class="w-full h-40 object-cover rounded-md mb-4">
+           <h3 class="font-semibold text-lg text-white mb-2">Nom du Projet 2</h3>
+           <p class="text-sm text-gray-400 mb-3 flex-grow">Description du projet, technologies (React, Firebase, etc.).</p>
+           <div class="mt-auto space-x-3">
+             <a href="[LIEN_GITHUB_PROJET_2]" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Code (GitHub)</a>
+             <a href="[LIEN_DEMO_PROJET_2]" target="_blank" class="inline-block bg-gray-600 hover:bg-gray-500 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Démo Live</a>
+           </div>
+         </div>
+         <!-- Projet 3 - Modèle (Ajoute si besoin) -->
+         <!-- <div class="bg-gray-700 p-5 rounded-xl shadow-lg flex flex-col hover:shadow-blue-500/30 transition duration-300">
+           <img src="images/placeholder-projet.png" alt="Aperçu Projet 3" class="w-full h-40 object-cover rounded-md mb-4">
+           <h3 class="font-semibold text-lg text-white mb-2">Nom du Projet 3</h3>
+           <p class="text-sm text-gray-400 mb-3 flex-grow">Description du projet, technologies.</p>
+           <div class="mt-auto space-x-3">
+             <a href="#" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Code (GitHub)</a>
+             <a href="#" target="_blank" class="inline-block bg-gray-600 hover:bg-gray-500 text-white text-xs font-bold py-1 px-3 rounded transition duration-300">Démo Live</a>
+           </div>
+         </div> -->
+       </div>
+     </div>
+   </section>
+
+  <!-- Veille -->
+  <section id="veille" class="py-16 bg-gray-800 px-4">
+     <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Veille Technologique</h2>
+      <p class="text-gray-300 leading-relaxed text-center mb-4">
+        Je me tiens informé des dernières tendances et évolutions technologiques via :
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-1 mb-6 max-w-md mx-auto">
+          <li>Plateformes : Medium, Dev.to, Blogs techniques</li>
+          <li>Actualités : Hacker News, GitHub Trending, newsletters (JS Weekly...)</li>
+          <li>Communautés : Stack Overflow, Discord/Slack dédiés</li>
+          <li>Expérimentation personnelle de nouvelles librairies/outils</li>
+      </ul>
+      <p class="text-gray-300 leading-relaxed text-center">
+        Mes centres d'intérêt actuels incluent : [Mentionne 2-3 sujets précis, ex: l'écosystème React/Next.js, les bases de données vectorielles, l'optimisation web performance, le déploiement continu (CI/CD)].
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-6">Contactez-moi</h2>
+    <p class="text-gray-300 mb-6">
+      Une question, une opportunité de stage ou simplement envie de discuter ? <br class="hidden sm:block"> Contactez-moi via les liens ci-dessous.
+    </p>
+    <div class="space-y-4">
+      <p class="text-gray-300">
+        📧 Email : <a href="mailto:ton.email.pro@example.com" class="text-blue-400 hover:underline">ton.email.pro@example.com</a> <!-- METS TON VRAI EMAIL -->
+      </p>
+      <p class="text-gray-300">
+        🔗 LinkedIn : <a href="https://www.linkedin.com/in/tonprofil-linkedin" target="_blank" class="text-blue-400 hover:underline">linkedin.com/in/tonprofil-linkedin</a> <!-- METS TON VRAI LIEN LINKEDIN -->
+      </p>
+       <p class="text-gray-300">
+        💻 GitHub : <a href="https://github.com/tonpseudo-github" target="_blank" class="text-blue-400 hover:underline">github.com/tonpseudo-github</a> <!-- METS TON VRAI LIEN GITHUB -->
+      </p>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-gray-500 text-sm border-t border-gray-700">
+    © 2024 David Diema – Tous droits réservés
+  </footer>
+
+  <!-- Script de particules -->
+  <script src="js/particles-config.js"></script>
+</body>
+</html>
