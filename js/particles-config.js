@@ -6,7 +6,7 @@ tsParticles.load("tsparticles", {
       // color: { value: "#0f172a" } // Peut être commenté si bg-gray-900 suffit
     },
     particles: {
-      number: { value: 300}, // Légèrement réduit pour la performance
+      number: { value: 700}, // Légèrement réduit pour la performance
       color: { value: "#38bdf8" }, // Bleu clair Tailwind
       shape: { type: "circle" },
       opacity: {
