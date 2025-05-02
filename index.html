@@ -7,7 +7,7 @@
   <title>David Diema - Portfolio Étudiant BUT Informatique</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/style.css" /> <!-- Assure-toi que ce fichier existe ou supprime le lien s'il est vide -->
+  <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
@@ -22,12 +22,15 @@
     .project-card { cursor: pointer; }
     body.modal-open { overflow: hidden; }
 
-    /* === CSS POUR L'ANIMATION DES BARRES === */
+    /* CSS POUR L'ANIMATION DES BARRES */
     .skill-bar-inner {
-      /* La largeur initiale est DÉFINIE EN INLINE HTML à 0% pour priorité */
-      transition: width 1s ease-out 0.2s; /* Transition: propriété, durée, easing, délai */
+      transition: width 1s ease-out 0.2s;
     }
-    /* ====================================== */
+
+    /* CSS pour le Carousel (optionnel, mais peut aider) */
+    .carousel-slide {
+       /* La transition est gérée par les classes Tailwind */
+    }
 
   </style>
 </head>
@@ -40,8 +43,9 @@
   <!-- Navigation -->
   <header class="fixed top-0 w-full z-50 bg-gray-900/70 backdrop-blur-md shadow-lg border-b border-gray-700">
       <nav class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-4 text-sm text-blue-300 font-medium">
+        <!-- Modifie le lien ici si tu changes l'ID de la section académique/citations -->
         <a href="#skills" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Skills</a>
-        <a href="#academique" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Académique</a>
+        <a href="#citations" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Inspirations</a> <!-- Lien changé -->
         <a href="#projets" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Projets</a>
         <a href="#experience" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Expérience</a>
         <a href="#veille" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Veille</a>
@@ -71,78 +75,84 @@
     </p>
   </section>
 
-  <!-- === SECTION SKILLS - Animation au Scroll (CORRIGÉ) === -->
+  <!-- Section Skills -->
   <section id="skills" class="py-16 bg-gray-800 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-semibold mb-12 text-center">COMPÉTENCES</h2>
-
       <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
-
-        <!-- === Colonne 1: Compétences === -->
+        <!-- Colonne 1: Compétences -->
         <div>
           <div class="mb-12">
             <ul class="space-y-4 text-gray-300">
-              <div class="pt-4 pb-1 text-center font-semibold text-white-400 text-sm uppercase tracking-wider">
-                FRONT-END
-              </div>
-               <!-- Li SANS 'group', Conteneur div SANS 'opacity-0 group-hover...', Barre interne avec 'skill-bar-inner' et width:0% -->
+              <div class="pt-4 pb-1 text-center font-semibold text-green-400 text-sm uppercase tracking-wider">FRONT-END</div>
                <li class="relative pb-2 cursor-default"><span>HTML</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>CSS</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>JavaScript (ES6+)</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="60" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">60%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>React, Redux</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="65" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">65%</span></div></li>
-               <div class="pt-4 pb-1 text-center font-semibold text-white-400 text-sm uppercase tracking-wider">
-                BACK-END
-              </div>
+               <div class="pt-4 pb-1 text-center font-semibold text-green-400 text-sm uppercase tracking-wider">BACK-END</div>
                <li class="relative pb-2 cursor-default"><span>Python</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="70" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">70%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>Java</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="60" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">60%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>SQL (PostgreSQL/MySQL)</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="70" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">70%</span></div></li>
-
-               <div class="pt-4 pb-1 text-center font-semibold text-white-400 text-sm uppercase tracking-wider">
-                DIVERS
-              </div>
+               <div class="pt-4 pb-1 text-center font-semibold text-green-400 text-sm uppercase tracking-wider">DIVERS</div>
                <li class="relative pb-2 cursor-default"><span>Git, GitHub</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>Windows</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
                <li class="relative pb-2 cursor-default"><span>Linux</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
             </ul>
           </div>
-
           <!-- Soft Skills -->
           <div>
             
             <ul class="list-disc list-inside text-gray-300 space-y-2">
-              
+            
             </ul>
           </div>
         </div> <!-- Fin Colonne 1 -->
-
-        <!-- === Colonne 2: CV === -->
+        <!-- Colonne 2: CV -->
         <div class="text-center md:text-left">
-       
-          <img src="images/apercu-cv.png"
-               alt="Aperçu de mon CV - David Diema"
-               class="max-w-full md:max-w-md mx-auto md:mx-0 rounded-lg shadow-xl border border-gray-700 mb-8">
-
-          <a href="cv/CV_David_Diema.pdf"
-             download="CV_David_Diema_2024.pdf"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+  
+          <img src="images/apercu-cv.png" alt="Aperçu de mon CV - David Diema" class="max-w-full md:max-w-md mx-auto md:mx-0 rounded-lg shadow-xl border border-gray-700 mb-8">
+          <a href="cv/CV_David_Diema.pdf" download="CV_David_Diema_2024.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
              Télécharger mon CV
           </a>
         </div> <!-- Fin Colonne 2 -->
-
       </div> <!-- Fin Grille principale -->
     </div> <!-- Fin Conteneur max-w -->
   </section>
   <!-- === FIN SECTION SKILLS === -->
 
-  <!-- Compétences académiques -->
-  <section id="academique" class="py-16 px-4 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-8 text-center">Compétences Académiques (BUT Info)</h2>
-     <ul class="list-disc list-inside text-gray-300 space-y-2 md:columns-2 gap-x-8">
-       <li>Algorithmique et structures de données</li><li>Développement Web (Frontend & Backend)</li><li>Administration systèmes (Linux)</li><li>Administration réseaux (TCP/IP)</li><li>Bases de données (Conception, SQL)</li><li>Mathématiques appliquées</li><li>Gestion de projet (Agile)</li><li>Sécurité informatique (Principes)</li><li>Architecture logicielle (UML)</li>
-    </ul>
+  <!-- ============================================= -->
+  <!-- === SECTION ACADÉMIQUE REMPLACÉE PAR CITATIONS === -->
+  <!-- ============================================= -->
+  <section id="citations" class="py-16 px-4 max-w-3xl mx-auto text-center relative overflow-hidden"> <!-- ID changé, max-w ajusté -->
+    <!-- Optionnel: Tu peux ajouter un titre si tu veux -->
+    <!-- <h2 class="text-3xl font-semibold mb-8 text-center">Inspirations</h2> -->
+
+    <!-- Conteneur du carrousel -->
+    <div id="citation-carousel" class="relative min-h-[8rem] flex items-center justify-center"> <!-- min-h pour éviter collapse, flex pour centrer verticalement -->
+
+        <!-- Slide 1 (Visible au début) -->
+        <div class="carousel-slide absolute inset-x-0 transition-opacity duration-1000 ease-in-out opacity-100 px-4">
+            <blockquote class="text-xl italic text-gray-300 mb-3">
+                "La complexité est votre ennemi. N’importe quel imbécile peut faire quelque chose de compliqué. Ce qui est difficile, c’est de faire simple."
+            </blockquote>
+            <cite class="block text-right mt-1 text-sm text-blue-300">— Richard Branson</cite>
+        </div>
+
+        <!-- Slide 2 (Cachée au début) -->
+        <div class="carousel-slide absolute inset-x-0 transition-opacity duration-1000 ease-in-out opacity-0 px-4">
+            <blockquote class="text-xl italic text-gray-300 mb-3">
+                "Il y a deux façons d’écrire un programme sans erreur ; seule la troisième fonctionne."
+            </blockquote>
+            <cite class="block text-right mt-1 text-sm text-blue-300">— Alan J. Perlis</cite>
+        </div>
+
+        <!-- Ajoute d'autres slides ici si besoin, sur le même modèle (avec opacity-0) -->
+
+    </div>
   </section>
+  <!-- ============================================= -->
+  <!-- === FIN SECTION CITATIONS === -->
+  <!-- ============================================= -->
 
    <!-- Expérience -->
    <section id="experience" class="py-16 bg-gray-800 px-4">
@@ -434,43 +444,55 @@ Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des
     });
   </script>
 
-  <!-- === SCRIPT POUR L'ANIMATION DES COMPÉTENCES === -->
+  <!-- SCRIPT POUR L'ANIMATION DES COMPÉTENCES -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const skillsSection = document.getElementById('skills');
-      // Vérifie si la section existe avant de chercher les barres
       if (skillsSection) {
-        const skillBars = skillsSection.querySelectorAll('.skill-bar-inner'); // Sélectionne les barres
-
-        // Configuration de l'Intersection Observer
-        const observerOptions = {
-          root: null, // Observe par rapport au viewport
-          rootMargin: '0px',
-          threshold: 0.1 // Déclenche quand 10% de la section est visible (un peu plus tôt)
-        };
-
+        const skillBars = skillsSection.querySelectorAll('.skill-bar-inner');
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
         const observerCallback = (entries, observer) => {
           entries.forEach(entry => {
-            // Si la section 'skills' est visible
             if (entry.isIntersecting) {
-              // Anime chaque barre de compétence
               skillBars.forEach(bar => {
-                const level = bar.dataset.level; // Récupère le niveau depuis data-level
-                if (level) {
-                    bar.style.width = level + '%'; // Applique la largeur cible
-                }
+                const level = bar.dataset.level;
+                if (level) { bar.style.width = level + '%'; }
               });
-              // Arrête d'observer une fois l'animation lancée
               observer.unobserve(skillsSection);
             }
           });
         };
-
-        // Créer et démarrer l'observer
         const skillsObserver = new IntersectionObserver(observerCallback, observerOptions);
         skillsObserver.observe(skillsSection);
-      } // Fin de la vérification si skillsSection existe
+      }
+    });
+  </script>
 
+  <!-- === NOUVEAU SCRIPT POUR LE CAROUSEL DE CITATIONS === -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselContainer = document.getElementById('citation-carousel');
+        if (carouselContainer) {
+            const slides = carouselContainer.querySelectorAll('.carousel-slide');
+            if (slides.length > 1) { // Seulement s'il y a plus d'une citation
+                let currentSlideIndex = 0;
+                const slideInterval = 7000; // Temps total (6s visible + 1s transition = 7s) - Ajuste si besoin
+
+                setInterval(() => {
+                    // Cache le slide actuel
+                    slides[currentSlideIndex].classList.remove('opacity-100');
+                    slides[currentSlideIndex].classList.add('opacity-0');
+
+                    // Calcule l'index du prochain slide
+                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+
+                    // Affiche le prochain slide
+                    slides[currentSlideIndex].classList.remove('opacity-0');
+                    slides[currentSlideIndex].classList.add('opacity-100');
+
+                }, slideInterval);
+            }
+        }
     });
   </script>
   <!-- ======================================================= -->
