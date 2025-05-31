@@ -43,9 +43,8 @@
   <!-- Navigation -->
   <header class="fixed top-0 w-full z-50 bg-gray-900/70 backdrop-blur-md shadow-lg border-b border-gray-700">
       <nav class="max-w-6xl mx-auto px-6 py-3 flex justify-center space-x-4 text-sm text-blue-300 font-medium">
-        <!-- Modifie le lien ici si tu changes l'ID de la section académique/citations -->
         <a href="#skills" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Compétences</a>
-        <a href="#citations" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Inspirations</a> <!-- Lien changé -->
+        <a href="#citations" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Inspirations</a>
         <a href="#projets" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Projets</a>
         <a href="#experience" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Expérience</a>
         <a href="#veille" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Veille</a>
@@ -99,17 +98,9 @@
                <li class="relative pb-2 cursor-default"><span>Linux</span><div class="absolute top-full mt-0.5 left-0 w-full flex items-center gap-2 pointer-events-none"><div class="flex-grow h-1 bg-gray-600 rounded overflow-hidden"><div class="skill-bar-inner h-full bg-blue-400 rounded" data-level="80" style="width: 0%;"></div></div><span class="text-xs font-medium text-blue-300 w-8 text-right">80%</span></div></li>
             </ul>
           </div>
-          <!-- Soft Skills -->
-          <div>
-            
-            <ul class="list-disc list-inside text-gray-300 space-y-2">
-            
-            </ul>
-          </div>
         </div> <!-- Fin Colonne 1 -->
         <!-- Colonne 2: CV -->
         <div class="text-center md:text-left">
-  
           <img src="images/apercu-cv.png" alt="Aperçu de mon CV - David Diema" class="max-w-full md:max-w-md mx-auto md:mx-0 rounded-lg shadow-xl border border-gray-700 mb-8">
           <a href="cv/CV_David_Diema_2024.pdf" download="CV_David_Diema_2024.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
              Télécharger mon CV
@@ -121,38 +112,25 @@
   <!-- === FIN SECTION SKILLS === -->
 
   <!-- ============================================= -->
-  <!-- === SECTION ACADÉMIQUE REMPLACÉE PAR CITATIONS === -->
+  <!-- === SECTION CITATIONS === -->
   <!-- ============================================= -->
-  <section id="citations" class="py-16 px-4 max-w-3xl mx-auto text-center relative overflow-hidden"> <!-- ID changé, max-w ajusté -->
-    <!-- Optionnel: Tu peux ajouter un titre si tu veux -->
-    <!-- <h2 class="text-3xl font-semibold mb-8 text-center">Inspirations</h2> -->
-
-    <!-- Conteneur du carrousel -->
-    <div id="citation-carousel" class="relative min-h-[8rem] flex items-center justify-center"> <!-- min-h pour éviter collapse, flex pour centrer verticalement -->
-
-        <!-- Slide 1 (Visible au début) -->
+  <section id="citations" class="py-16 px-4 max-w-3xl mx-auto text-center relative overflow-hidden">
+    <div id="citation-carousel" class="relative min-h-[8rem] flex items-center justify-center">
         <div class="carousel-slide absolute inset-x-0 transition-opacity duration-1000 ease-in-out opacity-100 px-4">
             <blockquote class="text-xl italic text-gray-300 mb-3">
                 "La complexité est votre ennemi. N’importe quel imbécile peut faire quelque chose de compliqué. Ce qui est difficile, c’est de faire simple."
             </blockquote>
             <cite class="block text-right mt-1 text-sm text-blue-300">— Richard Branson</cite>
         </div>
-
-        <!-- Slide 2 (Cachée au début) -->
         <div class="carousel-slide absolute inset-x-0 transition-opacity duration-1000 ease-in-out opacity-0 px-4">
             <blockquote class="text-xl italic text-gray-300 mb-3">
                 "Il y a deux façons d’écrire un programme sans erreur ; seule la troisième fonctionne."
             </blockquote>
             <cite class="block text-right mt-1 text-sm text-blue-300">— Alan J. Perlis</cite>
         </div>
-
-        <!-- Ajoute d'autres slides ici si besoin, sur le même modèle (avec opacity-0) -->
-
     </div>
   </section>
-  <!-- ============================================= -->
   <!-- === FIN SECTION CITATIONS === -->
-  <!-- ============================================= -->
 
    <!-- Expérience -->
    <section id="experience" class="py-16 bg-gray-800 px-4">
@@ -215,21 +193,17 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
         <!-- Projet 1 -->
         <div
-          class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300"
+          class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col"
           tabindex="0" role="button"
           data-title="24h Chrono Info – Challenge inter-IUT"
           data-img-src="images/24h-info.png"
-          data-description="24hChronoInfo – Un défi informatique en continu
-
-Ce projet est né d’une volonté commune de rassembler les étudiants autour d’un challenge à la fois technique, collaboratif et stimulant. Pendant 24 heures non-stop, plusieurs équipes d’IUT se sont affrontées autour de trois épreuves : développement web, algorithmie et cryptographie.
-
-Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des épreuves, création du contenu, communication… et bien sûr, la mise en ligne du site officiel. Ce dernier servait de point central pour suivre l’événement en direct, découvrir les projets, consulter les résultats, et donner un aperçu des coulisses à travers interviews, photos et vidéos."
+          data-description="24hChronoInfo – Un défi informatique en continu. Ce projet est né d’une volonté commune de rassembler les étudiants autour d’un challenge à la fois technique, collaboratif et stimulant. Pendant 24 heures non-stop, plusieurs équipes d’IUT se sont affrontées autour de trois épreuves : développement web, algorithmie et cryptographie. Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des épreuves, création du contenu, communication… et bien sûr, la mise en ligne du site officiel. Ce dernier servait de point central pour suivre l’événement en direct, découvrir les projets, consulter les résultats, et donner un aperçu des coulisses à travers interviews, photos et vidéos."
           data-link-url="https://delrone98.wixsite.com/24hchronoinfo"
           data-link-text="Voir le site de l'événement"
           >
           <img src="images/24h-info.png" alt="24h Chrono Info" class="w-full aspect-[2/3] object-cover pointer-events-none">
           <div class="p-5 flex flex-col flex-grow pointer-events-none">
-          
+            <h3 class="font-semibold text-lg text-white mb-2">24h Chrono Info</h3>
             <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
           </div>
         </div>
@@ -246,29 +220,26 @@ Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des
           >
           <img src="images/appgestiondestage.png" alt="Aperçu App Gestion Stages" class="w-full aspect-[2/3] object-cover pointer-events-none">
           <div class="p-5 flex flex-col flex-grow pointer-events-none">
-            
+            <h3 class="font-semibold text-lg text-white mb-2">App Gestion Stages (SAE)</h3>
             <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
           </div>
         </div>
-         <!-- Projet 3 -->
-         <div
-         class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col"
-         tabindex="0" role="button"
-         data-title="Développement d'une Calculatrice en Java" 
-         data-img-src="images/calculatrice-java.png" 
-         data-description="Ce projet consistait à développer une calculatrice fonctionnelle en Java. L'application permet d'effectuer les opérations arithmétiques de base (addition, soustraction, multiplication, division) et potentiellement d'autres fonctionnalités comme la gestion de l'historique ou des opérations plus complexes. L'accent a été mis sur la logique de calcul, la gestion des entrées utilisateur et la structuration du code en utilisant les principes de la programmation orientée objet. L'interface utilisateur a été réalisée avec [Préciser la techno GUI : Swing, JavaFX, ou console si c'est le cas]."
-         data-code-url="LIEN_VERS_TON_CODE_GITHUB_SI_DISPONIBLE" 
-        
-         >
-         <img src="images/calculatrice-java.png" alt="Aperçu du projet Calculatrice en Java" class="w-full aspect-[2/3] object-cover pointer-events-none">
-         <!-- J'ai changé les classes de l'image pour correspondre aux autres projets (aspect-[2/3] et enlevé mb-4) pour la cohérence visuelle -->
-         <!-- Si l'image ne s'affiche pas bien avec aspect-[2/3] object-cover, tu peux essayer : -->
-         <!-- class="w-full h-48 object-contain bg-gray-600 pointer-events-none" ou ajuster h-48 -->
-         <div class="p-5 flex flex-col flex-grow pointer-events-none">
-      
-           <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
-         </div>
-       </div>
+         <!-- Projet 3 (Calculatrice Java avec Compte Rendu) -->
+        <div
+            class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col"
+            tabindex="0" role="button"
+            data-title="Développement d'une Calculatrice en Java"
+            data-img-src="images/calculatrice-java.png"
+            data-description="Ce projet, réalisé en Java, visait à créer une calculatrice gérant les opérations arithmétiques de base. L'implémentation a suivi les principes de la programmation orientée objet, avec une attention particulière portée à la gestion des expressions, des opérations et des exceptions, notamment la division par zéro. Le compte rendu détaille la conception (diagramme de classes), l'implémentation des différentes classes (Expression, Operation, Nombre, etc.), la gestion des erreurs et une démonstration du fonctionnement. Interface utilisateur en console."
+            data-code-url="documents/sae.pdf"
+            data-code-link-text="Télécharger le compte rendu"
+            >
+            <img src="images/calculatrice-java.png" alt="Aperçu du projet Calculatrice en Java" class="w-full aspect-[2/3] object-cover pointer-events-none">
+            <div class="p-5 flex flex-col flex-grow pointer-events-none">
+              <h3 class="font-semibold text-lg text-white mb-2">Calculatrice en Java</h3>
+              <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
+            </div>
+        </div>
       </div>
     </div>
   </section>
@@ -309,7 +280,7 @@ Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des
     © 2024 David Diema – Tous droits réservés
   </footer>
 
-  <!-- Structure Modale (inchangée) -->
+  <!-- Structure Modale -->
   <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-70 z-[60] hidden flex items-center justify-center p-4 opacity-0" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
     <div id="modalContent" class="bg-gray-800 rounded-lg shadow-xl overflow-hidden max-w-2xl w-full transform max-h-[90vh] flex flex-col">
       <div class="p-4 sm:p-6 border-b border-gray-700 flex justify-between items-start">
@@ -327,126 +298,128 @@ Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des
     </div>
   </div>
 
-  <!-- Script pour les particules (inchangé) -->
+  <!-- Script pour les particules -->
   <script src="js/particles-config.js"></script>
 
-  <!-- Script pour la Modale (inchangé) -->
+  <!-- Script pour la Modale -->
   <script>
-    // Le script existant pour la modale des projets reste ici...
     document.addEventListener('DOMContentLoaded', () => {
       const projectCards = document.querySelectorAll('.project-card');
       const modal = document.getElementById('projectModal');
-      // ... (reste du code de la modale) ...
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalLinks = document.getElementById('modalLinks');
+      const closeModalButton = document.getElementById('closeModalButton');
+      const body = document.body;
+      let previouslyFocusedElement = null;
+
+      const openModal = (card) => {
+          previouslyFocusedElement = document.activeElement;
+          const title = card.dataset.title || 'Titre non défini';
+          const descriptionHTML = card.dataset.description || 'Description non disponible.';
+          const tempElement = document.createElement('div');
+          tempElement.innerHTML = descriptionHTML;
+          const description = tempElement.textContent || tempElement.innerText || '';
+
+          const linkUrl = card.dataset.linkUrl;
+          const linkText = card.dataset.linkText || 'Voir le lien';
+          const codeUrl = card.dataset.codeUrl;
+          const codeLinkText = card.dataset.codeLinkText || 'Code Source'; // Récupère le texte du bouton ou fallback
+          const demoUrl = card.dataset.demoUrl;
+
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+          modalLinks.innerHTML = ''; // Clear previous links
+
+          // Dynamically add links based on data attributes
+          if (linkUrl && linkText) { // Lien principal (bleu)
+              const linkElement = document.createElement('a');
+              linkElement.href = linkUrl; linkElement.target = '_blank'; linkElement.rel = 'noopener noreferrer';
+              linkElement.className = 'inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+              linkElement.textContent = linkText;
+              modalLinks.appendChild(linkElement);
+          }
+
+          if (codeUrl && codeUrl !== '#') { // Lien pour code source OU compte rendu (gris)
+              const codeLink = document.createElement('a');
+              codeLink.href = codeUrl;
+              codeLink.target = '_blank';
+              codeLink.rel = 'noopener noreferrer';
+              codeLink.className = 'inline-block bg-gray-600 hover:bg-gray-500 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+              codeLink.textContent = codeLinkText;
+
+              if (codeUrl.toLowerCase().endsWith('.pdf')) {
+                  const fileName = codeUrl.substring(codeUrl.lastIndexOf('/') + 1);
+                  codeLink.setAttribute('download', fileName || 'document.pdf');
+              }
+              modalLinks.appendChild(codeLink);
+           }
+
+          if (demoUrl && demoUrl !== '#') { // Lien démo live (vert)
+              const demoLink = document.createElement('a');
+              demoLink.href = demoUrl; demoLink.target = '_blank'; demoLink.rel = 'noopener noreferrer';
+              demoLink.className = 'inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+              demoLink.textContent = 'Démo Live';
+              modalLinks.appendChild(demoLink);
+          }
+
+          // Show/hide link container and adjust styling
+          const hasLinks = modalLinks.hasChildNodes();
+          modalLinks.style.display = hasLinks ? 'flex' : 'none';
+          modalLinks.classList.toggle('pt-4', hasLinks);
+          modalLinks.classList.toggle('border-t', hasLinks);
+
+          // Show modal
+          modal.classList.remove('hidden');
+          body.classList.add('modal-open');
+          requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                  modal.classList.remove('opacity-0');
+              });
+          });
+          closeModalButton.focus();
+       };
+
+       const closeModal = () => {
+          modal.classList.add('opacity-0');
+          const afterTransition = (event) => {
+               if (event.target === modal && event.propertyName === 'opacity') {
+                   modal.classList.add('hidden');
+                   body.classList.remove('modal-open');
+                   modal.removeEventListener('transitionend', afterTransition);
+                   if (previouslyFocusedElement) {
+                       previouslyFocusedElement.focus();
+                       previouslyFocusedElement = null;
+                   }
+               }
+          };
+          modal.addEventListener('transitionend', afterTransition, { once: true });
+           setTimeout(() => {
+            if (!modal.classList.contains('hidden') && modal.classList.contains('opacity-0')) {
+                modal.classList.add('hidden');
+                body.classList.remove('modal-open');
+                if (previouslyFocusedElement) { previouslyFocusedElement.focus(); previouslyFocusedElement = null; }
+                modal.removeEventListener('transitionend', afterTransition);
+            }
+          }, 350);
+       };
 
       projectCards.forEach(card => {
         card.addEventListener('click', () => { openModal(card); });
         card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); } });
       });
-      // ... (reste du code de la modale, y compris les fonctions openModal et closeModal) ...
-        const closeModalButton = document.getElementById('closeModalButton');
-        const body = document.body;
-        let previouslyFocusedElement = null;
 
-        const openModal = (card) => {
-            previouslyFocusedElement = document.activeElement;
-            const title = card.dataset.title || 'Titre non défini';
-            const descriptionHTML = card.dataset.description || 'Description non disponible.';
-            const tempElement = document.createElement('div');
-            tempElement.innerHTML = descriptionHTML;
-            const description = tempElement.textContent || tempElement.innerText || '';
-            const linkUrl = card.dataset.linkUrl;
-            const linkText = card.dataset.linkText || 'Voir le lien';
-            const codeUrl = card.dataset.codeUrl;
-            const demoUrl = card.dataset.demoUrl;
-
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            modalLinks.innerHTML = ''; // Clear previous links
-
-            // Dynamically add links based on data attributes
-            if (linkUrl && linkText) {
-                const linkElement = document.createElement('a');
-                linkElement.href = linkUrl; linkElement.target = '_blank'; linkElement.rel = 'noopener noreferrer';
-                linkElement.className = 'inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-                linkElement.textContent = linkText;
-                modalLinks.appendChild(linkElement);
-            }
-            if (codeUrl && codeUrl !== '#') {
-                const codeLink = document.createElement('a');
-                codeLink.href = codeUrl; codeLink.target = '_blank'; codeLink.rel = 'noopener noreferrer';
-                codeLink.className = 'inline-block bg-gray-600 hover:bg-gray-500 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-                codeLink.textContent = 'Code Source';
-                modalLinks.appendChild(codeLink);
-             }
-            if (demoUrl && demoUrl !== '#') {
-                const demoLink = document.createElement('a');
-                demoLink.href = demoUrl; demoLink.target = '_blank'; demoLink.rel = 'noopener noreferrer';
-                demoLink.className = 'inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-                demoLink.textContent = 'Démo Live';
-                modalLinks.appendChild(demoLink);
-            }
-
-            // Show/hide link container and adjust styling
-            const hasLinks = modalLinks.hasChildNodes();
-            modalLinks.style.display = hasLinks ? 'flex' : 'none';
-            modalLinks.classList.toggle('pt-4', hasLinks);
-            modalLinks.classList.toggle('border-t', hasLinks);
-
-            // Show modal
-            modal.classList.remove('hidden');
-            body.classList.add('modal-open');
-            // Force reflow before adding opacity class for transition
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    modal.classList.remove('opacity-0');
-                });
-            });
-            closeModalButton.focus(); // Set focus to close button
-         };
-
-         const closeModal = () => {
-            modal.classList.add('opacity-0');
-            const afterTransition = (event) => {
-                 // Ensure the transition is on the modal itself and it's the opacity property
-                 if (event.target === modal && event.propertyName === 'opacity') {
-                     modal.classList.add('hidden');
-                     body.classList.remove('modal-open');
-                     modal.removeEventListener('transitionend', afterTransition); // Clean up listener
-                     // Restore focus to the element that opened the modal
-                     if (previouslyFocusedElement) {
-                         previouslyFocusedElement.focus();
-                         previouslyFocusedElement = null;
-                     }
-                 }
-            };
-            // Use { once: true } for automatic listener removal after firing once
-            modal.addEventListener('transitionend', afterTransition, { once: true });
-
-            // Fallback timeout in case transitionend doesn't fire (e.g., transition duration is 0)
-             setTimeout(() => {
-              if (!modal.classList.contains('hidden') && modal.classList.contains('opacity-0')) {
-                  modal.classList.add('hidden');
-                  body.classList.remove('modal-open');
-                  if (previouslyFocusedElement) { previouslyFocusedElement.focus(); previouslyFocusedElement = null; }
-                  modal.removeEventListener('transitionend', afterTransition); // Ensure removal if timeout fires first
-              }
-            }, 350); // Slightly longer than the transition duration
-         };
-
-
-        closeModalButton.addEventListener('click', closeModal);
-        modal.addEventListener('click', (event) => { // Close if clicking outside the modal content
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-        document.addEventListener('keydown', (event) => { // Close with Escape key
-            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
-
+      closeModalButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+              closeModal();
+          }
+      });
+      document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+              closeModal();
+          }
+      });
     });
   </script>
 
@@ -474,34 +447,27 @@ Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des
     });
   </script>
 
-  <!-- === NOUVEAU SCRIPT POUR LE CAROUSEL DE CITATIONS === -->
+  <!-- SCRIPT POUR LE CAROUSEL DE CITATIONS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const carouselContainer = document.getElementById('citation-carousel');
         if (carouselContainer) {
             const slides = carouselContainer.querySelectorAll('.carousel-slide');
-            if (slides.length > 1) { // Seulement s'il y a plus d'une citation
+            if (slides.length > 1) {
                 let currentSlideIndex = 0;
-                const slideInterval = 7000; // Temps total (6s visible + 1s transition = 7s) - Ajuste si besoin
+                const slideInterval = 7000; 
 
                 setInterval(() => {
-                    // Cache le slide actuel
                     slides[currentSlideIndex].classList.remove('opacity-100');
                     slides[currentSlideIndex].classList.add('opacity-0');
-
-                    // Calcule l'index du prochain slide
                     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-
-                    // Affiche le prochain slide
                     slides[currentSlideIndex].classList.remove('opacity-0');
                     slides[currentSlideIndex].classList.add('opacity-100');
-
                 }, slideInterval);
             }
         }
     });
   </script>
-  <!-- ======================================================= -->
 
 </body>
 </html>
