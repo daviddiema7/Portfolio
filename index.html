@@ -27,18 +27,28 @@
       transition: width 1s ease-out 0.2s;
     }
 
-    /* CSS pour le Carousel de citations */
-    .carousel-slide {
-       /* La transition est gérée par les classes Tailwind */
-    }
-
     /* Pour masquer les barres de défilement du carrousel de projets */
-    #projets-carousel::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+    #projets-carousel::-webkit-scrollbar { display: none; }
+    #projets-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Style pour les filtres d'expérience */
+    .filter-btn.active {
+        background-color: #3b82f6; /* blue-500 */
+        color: white;
     }
-    #projets-carousel {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+    .experience-card {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, max-height 0.3s ease-in-out, padding 0.3s ease-in-out, margin 0.3s ease-in-out, border 0.3s ease-in-out;
+    }
+    .experience-card.hidden-by-filter {
+        opacity: 0;
+        transform: scale(0.95);
+        max-height: 0 !important; /* Important pour forcer le collapse */
+        overflow: hidden !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-width: 0 !important;
     }
 
   </style>
@@ -55,7 +65,7 @@
         <a href="#skills" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Compétences</a>
         <a href="#citations" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Inspirations</a>
         <a href="#projets" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Projets</a>
-        <a href="#experience" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Expérience</a>
+        <a href="#experience" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Parcours</a>
         <a href="#veille" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Veille</a>
         <a href="#contact" class="hover:text-white px-3 py-1 rounded-md hover:bg-gray-700/50 transition-colors duration-200">Contact</a>
       </nav>
@@ -110,6 +120,7 @@
         </div> <!-- Fin Colonne 1 -->
         <!-- Colonne 2: CV -->
         <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold mb-6 text-blue-300">Mon CV</h3>
           <img src="images/apercu-cv.png" alt="Aperçu de mon CV - David Diema" class="max-w-full md:max-w-md mx-auto md:mx-0 rounded-lg shadow-xl border border-gray-700 mb-8">
           <a href="cv/CV_David_Diema_2024.pdf" download="CV_David_Diema_2024.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
              Télécharger mon CV
@@ -120,9 +131,7 @@
   </section>
   <!-- === FIN SECTION SKILLS === -->
 
-  <!-- ============================================= -->
-  <!-- === SECTION CITATIONS === -->
-  <!-- ============================================= -->
+  <!-- Section Citations -->
   <section id="citations" class="py-16 px-4 max-w-3xl mx-auto text-center relative overflow-hidden">
     <div id="citation-carousel" class="relative min-h-[8rem] flex items-center justify-center">
         <div class="carousel-slide absolute inset-x-0 transition-opacity duration-1000 ease-in-out opacity-100 px-4">
@@ -139,57 +148,46 @@
         </div>
     </div>
   </section>
-  <!-- === FIN SECTION CITATIONS === -->
 
-   <!-- Expérience -->
+   <!-- Section Expérience (Nouvelle Structure) -->
    <section id="experience" class="py-16 bg-gray-800 px-4">
-     <div class="max-w-4xl mx-auto">
-       <h2 class="text-3xl font-semibold mb-8 text-center">Expériences Professionnelles / Stages</h2>
-       <div class="space-y-6 text-gray-300 border-l-2 border-blue-400 pl-6">
-         <div class="relative">
-           <div class="absolute -left-8 top-1 w-4 h-4 bg-blue-400 rounded-full"></div>
-           <h3 class="text-xl font-semibold text-white">Stage - Développeur Web [À Remplir]</h3>
-           <p class="text-sm text-blue-300 font-medium">Nom Entreprise | Ville - Dates</p>
-           <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
-             <li>Mission 1 : Décrivez brièvement une mission clé.</li>
-             <li>Mission 2 : Une autre mission ou responsabilité.</li>
-             <li>Technologies utilisées : Listez les outils/langages pertinents.</li>
-           </ul>
-         </div>
-         <div class="relative">
-            <div class="absolute -left-8 top-1 w-4 h-4 bg-blue-400 rounded-full"></div>
-            <h3 class="text-xl font-semibold text-white">SAE - Gestion des Stages IUT Villetaneuse</h3>
-            <p class="text-sm text-blue-300 font-medium">IUT de Villetaneuse - 2024</p>
-            <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
-              <li>Définition des fonctionnalités, organisation des informations (coordonnées, missions, dates...).</li>
-              <li>Mise en place de rappels automatiques pour actions clés (compte rendu, prise de contact...).</li>
-              <li>Création de vues adaptées aux profils (étudiants, tuteurs...) avec actions spécifiques.</li>
-              <li>Acquis: Conception UI, Analyse, Travail en équipe, Organisation des données.</li>
-            </ul>
+     <div class="max-w-5xl mx-auto">
+       <p class="text-center text-gray-400 text-sm mb-1">Mon expérience</p>
+       <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-300 mb-10">Mon Parcours</h2>
+
+       <!-- Filtres -->
+       <div id="experience-filters" class="flex justify-center space-x-2 sm:space-x-4 mb-12">
+         <button data-filter="all" class="filter-btn active px-4 py-2 text-sm font-medium border border-blue-500 text-blue-300 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Tous</button>
+         <button data-filter="formation" class="filter-btn px-4 py-2 text-sm font-medium border border-gray-600 text-gray-400 rounded-full hover:border-blue-500 hover:text-blue-300 transition-colors duration-200">Formation</button>
+         <button data-filter="professionnel" class="filter-btn px-4 py-2 text-sm font-medium border border-gray-600 text-gray-400 rounded-full hover:border-blue-500 hover:text-blue-300 transition-colors duration-200">Professionnel</button>
+       </div>
+
+       <!-- Grille des expériences -->
+       <div id="experience-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div class="experience-card bg-gray-700/70 p-6 rounded-xl shadow-lg flex flex-col space-y-3" data-category="formation">
+              <h3 class="text-lg font-semibold text-white">BUT Informatique (en cours)</h3>
+              <p class="text-sm text-gray-400">IUT de Villetaneuse - Université Sorbonne Paris Nord</p>
+              <p class="text-sm text-gray-300">2023 - Présent</p>
           </div>
-          <div class="relative">
-            <div class="absolute -left-8 top-1 w-4 h-4 bg-blue-400 rounded-full"></div>
-            <h3 class="text-xl font-semibold text-white">SAE - Les 24h de l'Info</h3>
-            <p class="text-sm text-blue-300 font-medium">Université Sorbonne Paris Nord - 2024</p>
-            <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
-              <li>Gestion des inscriptions et accueil des participants.</li>
-              <li>Collaboration pour l'organisation logistique et technique.</li>
-              <li>Gestion des plannings.</li>
-              <li>Communication et promotion sur réseaux sociaux et plateformes numériques.</li>
-              <li>Acquis: Gestion de projet, Esprit d'équipe, Gestion du temps, Communication, Initiative.</li>
-            </ul>
+         
+          <div class="experience-card bg-gray-700/70 p-6 rounded-xl shadow-lg flex flex-col space-y-3" data-category="professionnel">
+              <h3 class="text-lg font-semibold text-white">Stage - Ari Mayi</h3>
+              <p class="text-sm text-gray-400">Issy-les-Moulineaux </p>
+              <p class="text-sm text-gray-300">Janvier 2025 - Mars 2025</p>
+              <p class="text-xs text-gray-400">Acquis: Communication, Autonomie, Créativité, Esprit d'équipe.</p>
           </div>
-          <div class="relative">
-            <div class="absolute -left-8 top-1 w-4 h-4 bg-blue-400 rounded-full"></div>
-            <h3 class="text-xl font-semibold text-white">Stage - Restaurant Océan Gournay</h3>
-            <p class="text-sm text-blue-300 font-medium">Gournay-sur-Marne - 2019</p>
-            <ul class="list-disc list-inside mt-2 text-gray-400 text-sm space-y-1">
-              <li>Accueil des clients et prise des commandes.</li>
-              <li>Service en salle et gestion des paiements.</li>
-              <li>Gestion des réservations.</li>
-              <li>Maintien d'un environnement propre et organisé.</li>
-               <li>Acquis: Organisation, Autonomie, Aisance relationnelle.</li>
-            </ul>
+
+          <div class="experience-card bg-gray-700/70 p-6 rounded-xl shadow-lg flex flex-col space-y-3" data-category="professionnel">
+            <h3 class="text-lg font-semibold text-white">Stage - Océan Gournay</h3>
+            <p class="text-sm text-gray-400">Gournay-sur-Marne </p>
+            <p class="text-sm text-gray-300">Janvier 2020 - Janvier 2020</p>
+            <p class="text-xs text-gray-400">Acquis: Organisation, Leadership, Aisance relationnelle.</p>
+        </div>
+        
+          <div class="experience-card bg-gray-700/70 p-6 rounded-xl shadow-lg flex flex-col space-y-3" data-category="formation">
+              <h3 class="text-lg font-semibold text-white">Baccalauréat Technologique</h3>
+              <p class="text-sm text-gray-400">Lycée Gaston Bachelard - Chelles</p>
+              <p class="text-sm text-gray-300">Obtenu en 2023</p>
           </div>
        </div>
      </div>
@@ -199,120 +197,60 @@
   <section id="projets" class="py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-semibold mb-12 text-center">Mes Projets</h2>
-
       <div class="relative">
-        <!-- Conteneur du carrousel avec masquage du scrollbar -->
         <div id="projets-carousel-wrapper" class="overflow-hidden -mx-2 sm:-mx-3 md:-mx-4">
-            <!-- Carrousel réel AVEC scroll-smooth -->
-            <div id="projets-carousel"
-                 class="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-2 sm:px-3 md:px-4">
-
-                <!-- Projet 1: 24h Chrono Info -->
-                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start"
-                    tabindex="0" role="button"
-                    data-title="24h Chrono Info – Challenge inter-IUT"
-                    data-img-src="images/24h-info.png"
-                    data-description="Ce projet est né d’une volonté commune de rassembler les étudiants autour d’un challenge à la fois technique, collaboratif et stimulant. Pendant 24 heures non-stop, plusieurs équipes d’IUT se sont affrontées autour de trois épreuves : développement web, algorithmie et cryptographie. 
-
-Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des épreuves, création du contenu, communication… et bien sûr, la mise en ligne du site officiel. Ce dernier servait de point central pour suivre l’événement en direct, découvrir les projets, consulter les résultats, et donner un aperçu des coulisses à travers interviews, photos et vidéos."
-                    data-link-url="https://delrone98.wixsite.com/24hchronoinfo"
-                    data-link-text="Voir le site de l'événement">
+            <div id="projets-carousel" class="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-2 sm:px-3 md:px-4">
+                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start" tabindex="0" role="button" data-title="24h Chrono Info – Challenge inter-IUT" data-img-src="images/24h-info.png" data-description="Ce projet est né d’une volonté commune de rassembler les étudiants autour d’un challenge à la fois technique, collaboratif et stimulant. Pendant 24 heures non-stop, plusieurs équipes d’IUT se sont affrontées autour de trois épreuves : développement web, algorithmie et cryptographie.
+              
+Avec mon équipe, nous avons conçu l’événement de A à Z : organisation des épreuves, création du contenu, communication… et bien sûr, la mise en ligne du site officiel.
+Ce dernier servait de point central pour suivre l’événement en direct, découvrir les projets, consulter les résultats, et donner un aperçu des coulisses à travers interviews, photos et vidéos." data-link-url="https://delrone98.wixsite.com/24hchronoinfo" data-link-text="Voir le site de l'événement">
                     <img src="images/24h-info.png" alt="24h Chrono Info" class="w-full aspect-[2/3] object-cover pointer-events-none">
-                    <div class="p-5 flex flex-col flex-grow pointer-events-none">
-                       
-                        <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
-                    </div>
+                    <div class="p-5 flex flex-col flex-grow pointer-events-none"> <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p> </div>
                 </div>
-
-                <!-- Projet 2: App Gestion Stages -->
-                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start"
-                    tabindex="0" role="button"
-                    data-title="Application Gestion Stages (SAE)"
-                    data-img-src="images/appgestiondestage.png"
-                    data-description="Développement d'une application web pour la gestion des stages au sein de l'IUT de Villetaneuse. L'application permet de suivre les informations des stages (coordonnées, missions, dates, suivi des actions), de générer des rappels automatiques pour les étapes clés (compte rendu d'installation, prise de contact, planification de soutenance) et d'offrir des vues adaptées aux différents profils utilisateurs (étudiants, tuteurs, responsables administratifs) avec des actions et échéances spécifiques à chacun. Technologies potentielles : PHP, SQL, HTML, CSS, JavaScript."
-                    data-code-url="#"
-                    data-link-url="https://github.com/DevKosX/GestionDesStagesProject"
-                    data-link-text="Consulter le dépôt Github">
+                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start" tabindex="0" role="button" data-title="Application Gestion Stages (SAE)" data-img-src="images/appgestiondestage.png" data-description="Développement d'une application web pour la gestion des stages au sein de l'IUT de Villetaneuse. L'application permet de suivre les informations des stages (coordonnées, missions, dates, suivi des actions), de générer des rappels automatiques pour les étapes clés (compte rendu d'installation, prise de contact, planification de soutenance) et d'offrir des vues adaptées aux différents profils utilisateurs (étudiants, tuteurs, responsables administratifs) avec des actions et échéances spécifiques à chacun. Technologies potentielles : PHP, SQL, HTML, CSS, JavaScript." data-code-url="#" data-link-url="https://github.com/DevKosX/GestionDesStagesProject" data-link-text="Consulter le dépôt Github">
                     <img src="images/appgestiondestage.png" alt="Aperçu App Gestion Stages" class="w-full aspect-[2/3] object-cover pointer-events-none">
-                    <div class="p-5 flex flex-col flex-grow pointer-events-none">
-                        
-                        <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
-                    </div>
+                    <div class="p-5 flex flex-col flex-grow pointer-events-none"> <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p> </div>
                 </div>
+                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start" tabindex="0" role="button" data-title="Développement d'une Calculatrice en Java" data-img-src="images/calculatrice-java.png" data-description="Ce projet a consisté à concevoir et développer une application de calculatrice en Java. Réalisé en binôme, il a permis de mettre en pratique la programmation orientée objet, la gestion des exceptions, ainsi que la structuration modulaire d’une application.
+                
+L’application a été développée en plusieurs classes, chacune ayant un rôle bien défini (par exemple, pour la gestion des expressions ou des opérations). Une attention particulière a été portée à la classe Expression et à sa méthode valeur(), au cœur du traitement des calculs. Le projet a également intégré : 
 
-                <!-- Projet 3: Calculatrice Java -->
-                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start"
-                    tabindex="0" role="button"
-                    data-title="Développement d'une Calculatrice en Java"
-                    data-img-src="images/calculatrice-java.png"
-                    data-description="Ce projet a consisté à concevoir et développer une application de calculatrice en Java. Réalisé en binôme, il a permis de mettre en pratique la programmation orientée objet, la gestion des exceptions, ainsi que la structuration modulaire d’une application.
+-La gestion des erreurs et des exceptions, afin d’assurer une exécution fiable même en cas d’entrée invalide. 
 
-L’application a été développée en plusieurs classes, chacune ayant un rôle bien défini (par exemple, pour la gestion des expressions ou des opérations). Une attention particulière a été portée à la classe Expression et à sa méthode valeur(), au cœur du traitement des calculs.
-
-Le projet a également intégré :
-
--La gestion des erreurs et des exceptions, afin d’assurer une exécution fiable même en cas d’entrée invalide.
-
--Une répartition claire des tâches entre les membres de l’équipe.
+-Une répartition claire des tâches entre les membres de l’équipe. 
 
 -Une phase de test et démonstration pour valider les fonctionnalités principales.
 
-Malgré quelques difficultés notamment dans la compréhension de certaines classes complexes et des mécanismes d’exceptions en Java (throw) le projet a été mené à bien, avec une interface fonctionnelle et une logique de calcul robuste.
+Malgré quelques difficultés notamment dans la compréhension de certaines classes complexes et des mécanismes d’exceptions en Java (throw) le projet a été mené à bien, avec une interface fonctionnelle et une logique de calcul robuste. 
 
-Outils utilisés : IntelliJ, DataGrip, DB Designer"
-                    data-code-url="documents/sae.pdf"
-                    data-code-link-text="Télécharger le compte rendu">
+Outils utilisés : IntelliJ, DataGrip, DB Designer" data-code-url="documents/sae.pdf" data-code-link-text="Télécharger le compte rendu">
                     <img src="images/calculatrice-java.png" alt="Aperçu du projet Calculatrice en Java" class="w-full aspect-[2/3] object-cover pointer-events-none">
-                    <div class="p-5 flex flex-col flex-grow pointer-events-none">
-                    
-                        <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
-                    </div>
+                    <div class="p-5 flex flex-col flex-grow pointer-events-none"> <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p> </div>
                 </div>
-
-                <!-- NOUVEAU Projet 4: Création Base de Données -->
-                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start"
-                    tabindex="0" role="button"
-                    data-title="Freedom in the World - Base de Données"
-                    data-img-src="images/bd-projet.png"
-                    data-description="Ce projet a consisté en la conception et la mise en œuvre d’une base de données relationnelle visant à centraliser et analyser les données liées à la liberté dans différents pays du monde. Les principales étapes ont inclus l’écriture manuelle du script SQL de création des tables sous DataGrip, la modélisation conceptuelle et logique avec un AGL (DB Designer), ainsi que la génération automatique des scripts.
+                <div class="project-card bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transition duration-300 flex flex-col w-[90%] sm:w-[45%] md:w-[46%] lg:w-[30.5%] xl:w-[31%] flex-shrink-0 snap-center sm:snap-start" tabindex="0" role="button" data-title="Freedom in the World - Base de Données" data-img-src="images/bd-projet.png" data-description="Ce projet a consisté en la conception et la mise en œuvre d’une base de données relationnelle visant à centraliser et analyser les données liées à la liberté dans différents pays du monde. Les principales étapes ont inclus l’écriture manuelle du script SQL de création des tables sous DataGrip, la modélisation conceptuelle et logique avec un AGL (DB Designer), ainsi que la génération automatique des scripts. 
 
 La base de données, construite avec PostgreSQL, se structure autour de plusieurs entités clés : region, country, status et freedom. Ces tables permettent de stocker des informations telles que le code régional, le statut politique, les libertés civiles et les droits politiques pour chaque pays et chaque année.
+Le projet a également inclus : 
 
-Le projet a également inclus :
+-Le peuplement des tables à partir d’un fichier CSV contenant les données (via une table temporaire tmp). 
 
--Le peuplement des tables à partir d’un fichier CSV contenant les données (via une table temporaire tmp).
+-L’importation et le traitement des données avec des requêtes SQL pour insérer proprement les valeurs dans les tables principales. 
 
--L’importation et le traitement des données avec des requêtes SQL pour insérer proprement les valeurs dans les tables principales.
-
-Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV"
-                    data-code-url="documents/bd.pdf"
-                    data-code-link-text="Télécharger le compte rendu"
-                    >
+Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV" data-code-url="documents/bd.pdf" data-code-link-text="Télécharger le compte rendu">
                     <img src="images/bd-projet.png" alt="Aperçu projet Base de Données Clinique" class="w-full aspect-[2/3] object-cover pointer-events-none">
-                    <div class="p-5 flex flex-col flex-grow pointer-events-none">
-                        
-                        <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p>
-                    </div>
+                    <div class="p-5 flex flex-col flex-grow pointer-events-none"> <p class="text-sm mt-auto text-blue-400">Cliquez pour voir les détails</p> </div>
                 </div>
-
             </div>
         </div>
-
-        <!-- Boutons de navigation du Carrousel -->
         <button id="prevProjetBtn" aria-label="Projet précédent" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-gray-800/50 hover:bg-gray-700/70 text-white rounded-full backdrop-blur-sm shadow-lg ml-1 sm:ml-2 disabled:opacity-50 disabled:cursor-not-allowed">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /> </svg>
         </button>
         <button id="nextProjetBtn" aria-label="Projet suivant" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-gray-800/50 hover:bg-gray-700/70 text-white rounded-full backdrop-blur-sm shadow-lg mr-1 sm:mr-2 disabled:opacity-50 disabled:cursor-not-allowed">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /> </svg>
         </button>
       </div>
     </div>
   </section>
-
 
   <!-- Veille -->
   <section id="veille" class="py-16 bg-gray-800 px-4">
@@ -371,79 +309,77 @@ Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV"
   <!-- Script pour les particules -->
   <script src="js/particles-config.js"></script>
 
-  <!-- Script pour la Modale -->
+  <!-- Script pour la Modale (Assure-toi que les fonctions openModal et closeModal sont bien définies ici) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const projectCards = document.querySelectorAll('.project-card');
       const modal = document.getElementById('projectModal');
-      const modalTitleElement = document.getElementById('modalTitle'); 
-      const modalDescriptionElement = document.getElementById('modalDescription'); 
-      const modalLinksContainer = document.getElementById('modalLinks'); 
+      const modalTitleElement = document.getElementById('modalTitle');
+      const modalDescriptionElement = document.getElementById('modalDescription');
+      const modalLinksContainer = document.getElementById('modalLinks');
       const closeModalButton = document.getElementById('closeModalButton');
       const body = document.body;
       let previouslyFocusedElement = null;
 
       const openModal = (card) => {
-          previouslyFocusedElement = document.activeElement;
-          const title = card.dataset.title || 'Titre non défini';
-          const descriptionHTML = card.dataset.description || 'Description non disponible.';
-          const tempElement = document.createElement('div');
-          tempElement.innerHTML = descriptionHTML;
-          const description = tempElement.textContent || tempElement.innerText || '';
+        previouslyFocusedElement = document.activeElement;
+        const title = card.dataset.title || 'Titre non défini';
+        const descriptionHTML = card.dataset.description || 'Description non disponible.';
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = descriptionHTML;
+        const description = tempElement.textContent || tempElement.innerText || '';
 
-          const linkUrl = card.dataset.linkUrl;
-          const linkText = card.dataset.linkText || 'Voir le lien';
-          const codeUrl = card.dataset.codeUrl;
-          const codeLinkText = card.dataset.codeLinkText || 'Code Source';
-          const demoUrl = card.dataset.demoUrl;
+        const linkUrl = card.dataset.linkUrl;
+        const linkText = card.dataset.linkText || 'Voir le lien';
+        const codeUrl = card.dataset.codeUrl;
+        const codeLinkText = card.dataset.codeLinkText || 'Code Source';
+        const demoUrl = card.dataset.demoUrl;
 
-          modalTitleElement.textContent = title;
-          modalDescriptionElement.textContent = description;
-          modalLinksContainer.innerHTML = '';
+        modalTitleElement.textContent = title;
+        modalDescriptionElement.textContent = description;
+        modalLinksContainer.innerHTML = '';
 
-          if (linkUrl && linkText) {
-              const linkElement = document.createElement('a');
-              linkElement.href = linkUrl; linkElement.target = '_blank'; linkElement.rel = 'noopener noreferrer';
-              linkElement.className = 'inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-              linkElement.textContent = linkText;
-              modalLinksContainer.appendChild(linkElement);
-          }
+        if (linkUrl && linkText) {
+            const linkElement = document.createElement('a');
+            linkElement.href = linkUrl; linkElement.target = '_blank'; linkElement.rel = 'noopener noreferrer';
+            linkElement.className = 'inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+            linkElement.textContent = linkText;
+            modalLinksContainer.appendChild(linkElement);
+        }
+        if (codeUrl && codeUrl !== '#') {
+            const codeLink = document.createElement('a');
+            codeLink.href = codeUrl;
+            codeLink.target = '_blank';
+            codeLink.rel = 'noopener noreferrer';
+            codeLink.className = 'inline-block bg-blue-600 hover:bg-gray-500 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+            codeLink.textContent = codeLinkText;
+            if (codeUrl.toLowerCase().endsWith('.pdf')) {
+                const fileName = codeUrl.substring(codeUrl.lastIndexOf('/') + 1);
+                codeLink.setAttribute('download', fileName || 'document.pdf');
+            }
+            modalLinksContainer.appendChild(codeLink);
+         }
+        if (demoUrl && demoUrl !== '#') {
+            const demoLink = document.createElement('a');
+            demoLink.href = demoUrl; demoLink.target = '_blank'; demoLink.rel = 'noopener noreferrer';
+            demoLink.className = 'inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
+            demoLink.textContent = 'Démo Live';
+            modalLinksContainer.appendChild(demoLink);
+        }
 
-          if (codeUrl && codeUrl !== '#') {
-              const codeLink = document.createElement('a');
-              codeLink.href = codeUrl;
-              codeLink.target = '_blank';
-              codeLink.rel = 'noopener noreferrer';
-              codeLink.className = 'inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-              codeLink.textContent = codeLinkText;
-              if (codeUrl.toLowerCase().endsWith('.pdf')) {
-                  const fileName = codeUrl.substring(codeUrl.lastIndexOf('/') + 1);
-                  codeLink.setAttribute('download', fileName || 'document.pdf');
-              }
-              modalLinksContainer.appendChild(codeLink);
-           }
+        const hasLinks = modalLinksContainer.hasChildNodes();
+        modalLinksContainer.style.display = hasLinks ? 'flex' : 'none';
+        modalLinksContainer.classList.toggle('pt-4', hasLinks);
+        modalLinksContainer.classList.toggle('border-t', hasLinks);
 
-          if (demoUrl && demoUrl !== '#') {
-              const demoLink = document.createElement('a');
-              demoLink.href = demoUrl; demoLink.target = '_blank'; demoLink.rel = 'noopener noreferrer';
-              demoLink.className = 'inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 whitespace-nowrap';
-              demoLink.textContent = 'Démo Live';
-              modalLinksContainer.appendChild(demoLink);
-          }
-
-          const hasLinks = modalLinksContainer.hasChildNodes();
-          modalLinksContainer.style.display = hasLinks ? 'flex' : 'none';
-          modalLinksContainer.classList.toggle('pt-4', hasLinks);
-          modalLinksContainer.classList.toggle('border-t', hasLinks);
-
-          modal.classList.remove('hidden');
-          body.classList.add('modal-open');
-          requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                  modal.classList.remove('opacity-0');
-              });
-          });
-          closeModalButton.focus();
+        modal.classList.remove('hidden');
+        body.classList.add('modal-open');
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+            });
+        });
+        closeModalButton.focus();
        };
 
        const closeModal = () => {
@@ -522,7 +458,6 @@ Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV"
             if (slides.length > 1) {
                 let currentSlideIndex = 0;
                 const slideInterval = 7000;
-
                 setInterval(() => {
                     slides[currentSlideIndex].classList.remove('opacity-100');
                     slides[currentSlideIndex].classList.add('opacity-0');
@@ -535,7 +470,7 @@ Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV"
     });
   </script>
 
-  <!-- SCRIPT POUR LE CAROUSEL DE PROJETS (RETOUR À behavior: 'smooth' AVEC OPTIMISATIONS) -->
+  <!-- SCRIPT POUR LE CAROUSEL DE PROJETS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const carousel = document.getElementById('projets-carousel');
@@ -548,65 +483,70 @@ Outils utilisés : PostgreSQL, DataGrip, DB Designer (AGL), CSV"
           if (firstCard) {
             const carouselStyle = getComputedStyle(carousel);
             const gap = parseFloat(carouselStyle.gap) || 0;
-            // On veut scroller pour que la prochaine carte soit visible
-            // C'est généralement la largeur de la carte + le gap
             return firstCard.offsetWidth + gap;
           }
-          // Fallback si aucune carte n'est trouvée
-          return carousel.clientWidth * 0.8; 
+          return carousel.clientWidth * 0.8;
         };
 
-        let scrollTimeout; // Pour gérer le "scrollend" manuellement
+        let scrollTimeout;
         const updateButtonsState = () => {
           if (!carousel) return;
-          const tolerance = 10; // Augmenter la tolérance peut aider avec le snap
-          
-          // Désactiver le bouton précédent si on est (presque) au début
+          const tolerance = 10;
           prevBtn.disabled = carousel.scrollLeft <= tolerance;
-          // Désactiver le bouton suivant si on est (presque) à la fin
           nextBtn.disabled = carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - tolerance);
         };
 
         prevBtn.addEventListener('click', () => {
-          carousel.scrollBy({ 
-            left: -getScrollAmount(), 
-            behavior: 'smooth' 
-          });
+          carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
         });
 
         nextBtn.addEventListener('click', () => {
-          carousel.scrollBy({ 
-            left: getScrollAmount(), 
-            behavior: 'smooth' 
-          });
+          carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
         });
 
-        // Écouteur pour mettre à jour les boutons après le scroll (natif ou programmé)
-        // Le `scrollend` event serait idéal mais pas encore universellement supporté.
-        // On utilise donc un timeout sur l'event `scroll`.
         carousel.addEventListener('scroll', () => {
             clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                updateButtonsState();
-            }, 150); // Délai pour attendre la fin du scroll et du snap
+            scrollTimeout = setTimeout(updateButtonsState, 150);
         }, { passive: true });
 
-
-        // Mettre à jour l'état des boutons lors du redimensionnement de la fenêtre
         let resizeTimeout;
         window.addEventListener('resize', () => {
           clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            updateButtonsState();
-          }, 150); 
+          resizeTimeout = setTimeout(updateButtonsState, 150);
         });
         
-        // Appel initial pour définir l'état correct des boutons au chargement.
-        setTimeout(updateButtonsState, 200); // Délai pour le rendu initial
+        setTimeout(updateButtonsState, 200);
       }
     });
   </script>
-  <!-- ======================================================= -->
+
+  <!-- SCRIPT POUR LE FILTRAGE DES EXPÉRIENCES -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('#experience-filters .filter-btn');
+        const experienceCards = document.querySelectorAll('#experience-grid .experience-card');
+
+        if (filterButtons.length > 0 && experienceCards.length > 0) {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filterValue = button.dataset.filter;
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    experienceCards.forEach(card => {
+                        const cardCategory = card.dataset.category;
+                        const shouldShow = (filterValue === 'all' || cardCategory === filterValue);
+                        if (shouldShow) {
+                            card.classList.remove('hidden-by-filter');
+                        } else {
+                            card.classList.add('hidden-by-filter');
+                        }
+                    });
+                });
+            });
+        }
+    });
+  </script>
 
 </body>
 </html>
